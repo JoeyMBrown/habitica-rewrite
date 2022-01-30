@@ -1,18 +1,18 @@
 import GlobalStyles from './CSS-Reset/GlobalStyles';
 import React from 'react';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
-import Profile from './components/Profile';
-import SignupButton from './components/SignupButton';
+import MainPage from './pages/MainPage';
+import LoginPage from "./pages/LoginPage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <Profile />
-      <LoginButton/>
-      <LogoutButton/>
-      <SignupButton/>
+
+      <Routes>
+        <Route path="/user" element={<MainPage />}/>
+        <Route path="/" element={<LoginPage />} />
+      </Routes>
     </div>
   );
 }
